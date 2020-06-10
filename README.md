@@ -1,2 +1,2 @@
-# js-tuto
+# JavaScript-Tutorial
 JavaScript tutorial
