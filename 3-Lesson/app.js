@@ -9,7 +9,7 @@ GAME RULES:
 
 */
 
-var scores, activePlayer,dice,prevDice , roundScore, gamePlaying ;
+var scores, activePlayer,dice, prevDice , roundScore, gamePlaying ;
 
 
 
@@ -27,21 +27,34 @@ btn(); */
 document.querySelector('.btn-roll').addEventListener('click', function(){
     if(gamePlaying) {
   // 1 . random number
-  dice = Math.floor(Math.random()*6)+1; 
+  dice1 = Math.floor(Math.random()*6)+1; 
+ // console.log(dice1);
+  //dice = 6 ;
+  dice2 = Math.floor(Math.random()*6)+1; 
   //2. Display result
-  var diceDom = document.querySelector('.dice')
-  diceDom.style.display = 'block';
-  diceDom.src = 'dice-' + dice + '.png';
-
+    document.getElementById('dice-1').style.display = 'block' ;
+    document.getElementById('dice-2').style.display = 'block' ;
+    document.getElementById ('dice-1').src = 'dice-' + dice1 + '.png';
+    document.getElementById ('dice-2').src = 'dice-' + dice2 + '.png';
+   
+  
   //3. update the score if the dice if != 1
-  if(dice !== 1) {
-      roundScore += dice ;
+  if (dice === 6 && prevDice === 6){
+
+    scores[activePlayer] =0 ;
+    document.querySelector('#score-' + activePlayer).textContent = '0';
+    nextPlayer();
+
+  } 
+  
+  else if(dice !== 1 && dice2!==1) {
+      roundScore += dice1 + dice2 ;
       //roundScore = roudsScore + dice;
       document.querySelector('#current-' + activePlayer ).textContent = roundScore;
 
      
-}
-  
+}    
+
   else {
 
       nextPlayer();
@@ -51,6 +64,7 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
           //document.querySelector('.player-1-panel').classList.add('active');
           
       }
+      prevDice = dice ; 
     }
 });
 
@@ -58,10 +72,26 @@ document.querySelector('.btn-hold').addEventListener('click' , function(){
     //1. Add current score to global score 
    if(gamePlaying){
     scores[activePlayer] += roundScore;
+
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 }
-    if(scores[activePlayer] >= 20 ) {
+
+    var input = document.querySelector('.final-score').value ;
+
+    //Undefined, 0 , NULL , "" are coerced to false // else is true 
+    if(input){
+        var winningScore = input ;
+
+
+    } else {
+        winningScore = 20;
+
+    }
+    
+    if(scores[activePlayer] >= winningScore) {
         document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
-        document.querySelector('.dice').style.display = 'none';
+        document.getElementById('dice-1').style.display = 'none' ;
+    document.getElementById('dice-2').style.display = 'none' ;
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
         document.querySelector('.player-0-panel').classList.remove('active');
         document.querySelector('.player-1-panel').classList.remove('active');
@@ -70,7 +100,7 @@ document.querySelector('.btn-hold').addEventListener('click' , function(){
         nextPlayer();
     }
     // Update the UI 
-    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer] 
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer] ;
 
     //check if the player won the game; 
 
@@ -85,7 +115,8 @@ function nextPlayer(){
 
     document.querySelector('.player-0-panel').classList.toggle('active');
     document.querySelector('.player-1-panel').classList.toggle('active');
-    document.querySelector('.dice').style.display = 'none';
+    document.getElementById('dice-1').style.display = 'none' ;
+    document.getElementById('dice-2').style.display = 'none' ;
 }
 
 document.querySelector('.btn-new').addEventListener('click',init)
@@ -95,7 +126,8 @@ function init(){
     scores = [0,0];
     activePlayer = 0 ; 
     roundScore = 0;
-    document.querySelector('.dice').style.display = 'none' ; //hide the picture in the beginning
+    document.getElementById('dice-1').style.display = 'none' ;
+    document.getElementById('dice-2').style.display = 'none' ;//hide the picture in the beginning
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
