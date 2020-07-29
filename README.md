@@ -22,9 +22,16 @@
 * Add another dice to the game, so that there are two dices now. The player looses his current score when one of them is a 1. (Hint: you will need CSS to position the second dice, so take a look at the CSS code for the first one.)
 
 ![Press to see the image ](./3-Lesson/pig_game.png?raw=true "Pig Game")
+
+
 ###### Lesson-6 Advanced JavaScript: Objects and Functions
 
+
 ###### Lesson-7 Putting It All Together: The Budget App Project
+
+![Press to see the image ](./4-Lesson/Budgety.png?raw=true "Pig Game")
+
+![Press to see the image ](./4-Lesson/archi.png?raw=true "Pig Game")
 
 ###### Lesson-8 Next Generation JavaScript: Intro to ES6 / ES2015
 
