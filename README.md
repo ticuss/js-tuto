@@ -29,9 +29,9 @@
 
 ###### Lesson-7 Putting It All Together: The Budget App Project
 
-![Press to see the image ](./4-Lesson/Budgety.png?raw=true "Pig Game")
+![Press to see the image ](./5-Lesson/Budgety.png?raw=true "Pig Game")
 
-![Press to see the image ](./4-Lesson/archi.png?raw=true "Pig Game")
+![Press to see the image ](./5-Lesson/archi.png?raw=true "Pig Game")
 
 ###### Lesson-8 Next Generation JavaScript: Intro to ES6 / ES2015
 
