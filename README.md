@@ -21,7 +21,7 @@
 * Add an input field to the HTML where players can set the winning score, so that they can change the predefined score of 100. (Hint: you can read that value with the .value property in JavaScript. This is a good oportunity to use google to figure this out :)
 * Add another dice to the game, so that there are two dices now. The player looses his current score when one of them is a 1. (Hint: you will need CSS to position the second dice, so take a look at the CSS code for the first one.)
 
-![Press to see the image ](pig_game.png?raw=true "Pig Game")
+![Press to see the image ](../3-Lesson/pig_game.png?raw=true "Pig Game")
 ###### Lesson-6 Advanced JavaScript: Objects and Functions
 
 ###### Lesson-7 Putting It All Together: The Budget App Project
